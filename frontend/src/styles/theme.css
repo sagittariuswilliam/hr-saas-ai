@@ -1,0 +1,151 @@
+/* ==========================================================================
+ * HR-SaaS V1.1 Theme Tokens
+ *
+ * 配色：深海青 #0F4C5C + 琥珀 #D97706 + Inkstone 中性轴
+ * 禁用色：紫(#6366F1/#8B5CF6) · 粉(#EC4899/#DB2777) · 青(#06B6D4/#0EA5E9)
+ * 决策人：王也 2026-06-29（V1.1 不做暗色模式）
+ * ========================================================================== */
+
+:root {
+  /* ===== 主色 深海青 Deep-Sea Cyan ===== */
+  --brand-primary-50:  #E6EEF0;   /* 浅色模式悬停背景 */
+  --brand-primary-100: #C2D4D9;
+  --brand-primary-300: #6E97A1;
+  --brand-primary-500: #0F4C5C;   /* 主色 — 深海青 */
+  --brand-primary-700: #0A3644;
+  --brand-primary-900: #061F2A;
+
+  /* 中性 Inkstone（替换 Slate 系，但保留所有可达性对比） */
+  --ink-900: #0F172A;             /* 文字主色 */
+  --ink-700: #334155;
+  --ink-500: #64748B;
+  --ink-300: #CBD5E1;             /* 边框 */
+  --ink-100: #E2E8F0;             /* 分割线 */
+  --ink-50:  #F8FAFC;             /* 页面底色 */
+  --paper:   #FFFFFF;
+
+  /* ===== Accent 暖色（4 个，锁死避免再撞紫青粉） ===== */
+  --accent-amber:    #D97706;     /* 主强调：CTA、数字高亮、徽章 */
+  --accent-clay:     #B45309;     /* hover/pressed 状态 */
+  --accent-saffron:  #F59E0B;     /* 警告语义 + 高亮 data-viz */
+  --accent-jade:     #047857;     /* 成功语义（成功绿去蓝偏青） */
+
+  /* ===== 语义色（6 个） ===== */
+  --success-500: #047857;         /* Jade，比 #10B981 更稳 */
+  --success-50:  #ECFDF5;
+  --warning-500: #D97706;         /* 与 amber 同源 */
+  --warning-50:  #FEF3C7;
+  --danger-500:  #B91C1C;         /* 比 #EF4444 更克制 */
+  --danger-50:   #FEF2F2;
+  --info-500:    #0E7490;         /* 深海青变体 */
+  --info-50:     #ECFEFF;
+  --neutral-500: #64748B;
+  --neutral-50:  #F8FAFC;
+
+  /* ===== 字体栈（思源宋体 + Noto Sans + JetBrains Mono） ===== */
+  --font-display: 'Source Han Serif SC', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --font-body:    'Noto Sans SC', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-number:  'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ===== 旧 token 兼容别名（保证 V1.0 旧视图不会全断） =====
+   * 下游 login/dashboard 重写后会切到新 token；过渡期保留映射。 */
+  --brand-primary:       var(--brand-primary-500);
+  --brand-primary-dark:  var(--brand-primary-700);
+  --brand-primary-light: var(--brand-primary-300);
+  --brand-secondary:     var(--accent-amber);
+  --color-success:       var(--success-500);
+  --color-warning:       var(--warning-500);
+  --color-danger:        var(--danger-500);
+  --color-info:          var(--info-500);
+  --text-primary:        var(--ink-900);
+  --text-secondary:      var(--ink-700);
+  --text-tertiary:       var(--ink-500);
+  --text-inverse:        var(--paper);
+  --bg-default:          var(--ink-50);
+  --bg-elevated:         var(--paper);
+  --bg-subtle:           var(--ink-50);
+  --bg-dark:             var(--brand-primary-900);
+  --bg-dark-elevated:    var(--brand-primary-700);
+
+  /* ===== Element Plus 主题覆盖（让 el-button / el-tag 自动跟随） ===== */
+  --el-color-primary: var(--brand-primary-500);
+  --el-color-success: var(--success-500);
+  --el-color-warning: var(--warning-500);
+  --el-color-danger:  var(--danger-500);
+  --el-color-info:    var(--info-500);
+  --el-text-color-primary:   var(--ink-900);
+  --el-text-color-regular:   var(--ink-700);
+  --el-text-color-secondary: var(--ink-500);
+  --el-border-color:         var(--ink-300);
+  --el-color-primary-light-3: var(--brand-primary-300);
+  --el-color-primary-light-5: var(--brand-primary-300);
+  --el-color-primary-light-7: var(--brand-primary-100);
+  --el-color-primary-light-8: var(--brand-primary-100);
+  --el-color-primary-light-9: var(--brand-primary-50);
+  --el-color-primary-dark-2:  var(--brand-primary-700);
+
+  /* ===== 边框（中性 Inkstone） ===== */
+  --border-subtle:  rgba(15, 23, 42, 0.08);
+  --border-default: rgba(15, 23, 42, 0.12);
+  --border-strong:  rgba(15, 23, 42, 0.20);
+
+  /* ===== 阴影（用深海青替换 indigo，去 AI Slop 指纹） ===== */
+  --shadow-sm: 0 1px 2px rgba(15, 76, 92, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 76, 92, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 76, 92, 0.12);
+  --shadow-xl: 0 24px 64px rgba(15, 23, 42, 0.08);
+  --shadow-glass: 0 8px 32px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 24px rgba(217, 119, 6, 0.18);  /* amber 焦点光晕 */
+
+  /* ===== 圆角 ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ===== 动效曲线 ===== */
+  --ease-back:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+  /* ===== 间距 ===== */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ===== 字号 ===== */
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+
+  /* ===== 字号标题（语义化） ===== */
+  --font-size-display: 48px;
+  --font-size-h1:      36px;
+  --font-size-h2:      28px;
+  --font-size-h3:      20px;
+  --font-size-body:    15px;
+  --font-size-caption: 13px;
+  --font-size-micro:   12px;
+
+  /* ===== 字重 ===== */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ===== 行高 ===== */
+  --line-height-tight:  1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose:  1.8;
+}

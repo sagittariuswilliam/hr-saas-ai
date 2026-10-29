@@ -1,0 +1,46 @@
+"""
+Pydantic 模型包 - 100% 按需求文档
+"""
+from app.schemas.user import (
+    UserBase,
+    UserCreate,
+    UserUpdate,
+    UserResponse,
+    UserResetPassword,
+    UserLogin,
+    LoginResponse,
+    ProjectBase,
+    ProjectCreate,
+    ProjectUpdate,
+    ProjectResponse,
+    PositionBase,
+    PositionCreate,
+    PositionUpdate,
+    PositionResponse,
+    ResumeResponse,
+    MatchingResultResponse,
+    ApiResponse,
+    PaginatedResponse,
+)
+
+__all__ = [
+    "UserBase",
+    "UserCreate",
+    "UserUpdate",
+    "UserResponse",
+    "UserResetPassword",
+    "UserLogin",
+    "LoginResponse",
+    "ProjectBase",
+    "ProjectCreate",
+    "ProjectUpdate",
+    "ProjectResponse",
+    "PositionBase",
+    "PositionCreate",
+    "PositionUpdate",
+    "PositionResponse",
+    "ResumeResponse",
+    "MatchingResultResponse",
+    "ApiResponse",
+    "PaginatedResponse",
+]

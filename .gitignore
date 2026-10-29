@@ -1,0 +1,13 @@
+# 环境与数据（含隐私，绝不提交）
+.env
+*.db
+uploads/
+backend/uploads/
+__pycache__/
+*.pyc
+venv/
+node_modules/
+dist/
+*.log
+.pytest_cache/
+.DS_Store
